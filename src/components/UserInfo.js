@@ -33,9 +33,10 @@ export default function UserInfo() {
     setUser(data)
     setLoading(false)
   }
+
   const userRepos = async () => {
     const id = getId()
-    const response = await fetch(`https://api.github.com/users/${id}/repos`)
+    const response = await fetch(`https://api.github.com/users/${id}/repos?per_page=100`)
     const data = await response.json()
     setRepos(data)
     setLoading(false)
