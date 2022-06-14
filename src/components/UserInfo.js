@@ -38,9 +38,22 @@ export default function UserInfo() {
     const id = getId()
     const response = await fetch(`https://api.github.com/users/${id}/repos?per_page=100`)
     const data = await response.json()
-    setRepos(data)
-    setLoading(false)
     
+    const repo = data.sort((a, b) => {
+      return parseDate(b.updated_at).split("/")[2] - parseDate(a.updated_at).split("/")[2]
+    })
+
+    const repo2 = data.sort((a, b) => {
+      return new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime()
+    })
+
+    setRepos(repo2)
+    //setRepos(data)
+
+    setLoading(false)
+    //console.log(data);
+    //console.log(parseDate(data[0].created_at).split("/")[2]);
+    console.log(repo);
   }
 
   const parseDate = (date) => {
@@ -130,6 +143,7 @@ export default function UserInfo() {
                 <th>Nombre</th>
                 <th>Descripcion</th>
                 <th>Link</th>
+                <th>Ultimo Push</th>
                 <th>Creacion</th>
               </tr>
         </thead>
@@ -140,6 +154,7 @@ export default function UserInfo() {
               <td>{repo.name}</td>
               <td>{repo.description ? repo.description : "No tiene descripcion"}</td>
               <td><a className='link-repo' href={repo.html_url}>{repo.html_url}</a></td>
+              <td>{parseDate(repo.pushed_at)}</td>
               <td>{parseDate(repo.created_at)}</td>
             </tr>
           ))}
