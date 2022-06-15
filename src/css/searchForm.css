@@ -55,6 +55,15 @@
     margin-bottom: 55px;
 }
 
+/* responsive */
+@media screen and (max-width: 768px) {
+    .search-users-container {
+        grid-template-columns: repeat(2, 1fr);
+        
+        margin: auto;
+    }
+}
+
 .search-user-container{
     width: 80%;
     height: 100%;
