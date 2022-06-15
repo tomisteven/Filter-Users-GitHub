@@ -59,9 +59,41 @@
 @media screen and (max-width: 768px) {
     .search-users-container {
         grid-template-columns: repeat(2, 1fr);
-        
-        margin: auto;
+        margin: 20px;  
+        width: 100%;
     }
+    .search-user-container{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    .search-logo {
+        width: 25px;
+        height: 25px;
+        margin: auto 20px;
+    }
+    .search-form {
+        font-family: 'Odibee Sans', cursive;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: #292e34;
+        flex-wrap: wrap;
+        margin-bottom: 45px;
+    }
+    .search-user-container img{
+        width: 80px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        object-fit: cover;
+    }
+
 }
 
 .search-user-container{
