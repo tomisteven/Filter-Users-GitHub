@@ -1,4 +1,5 @@
 
+
 .userinfo-container {
     display: flex;
     flex-direction: row;
@@ -113,6 +114,8 @@
 
 
 
+
+
 /* DATATABLE */
 .repos-title {
     font-family: 'Koulen', cursive;
@@ -222,4 +225,50 @@
     margin-right: 25px;
     margin-left: 25px;
 
+}
+/* responsive */
+@media screen and (max-width: 600px) {
+    .userinfo-container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        
+    }   
+    
+    .infoGraficas {
+        width: 100%;
+        height: auto;
+        margin: auto 10px;
+        margin-bottom: 7%;
+        font-family: 'Odibee Sans', cursive;
+    
+    }
+    .userinfo{
+        width: 100%;
+        height: auto;
+        margin: auto;
+        margin-bottom: 7%;
+        font-family: 'Odibee Sans', cursive;
+    }
+    .cont-progress{
+        margin-top: 10%;
+        width: 100%;
+    }
+    .progress{
+        margin-bottom: 5%;
+        margin-top: 5%;
+        width: 100%;
+    }
+    .datatable-container .datatable th,
+    .datatable-container .datatable td {
+        font-size: 13px;
+}
+.datatable .number{
+    font-size: 13px;
+}
+table{
+    overflow-x: scroll;
+}
+
+    
 }
